@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		384F990A2DC8FE22000CC51C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 384F99092DC8FE1A000CC51C /* README.md */; };
+		38C433102DC2B2860085CEEF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C4330F2DC2B2860085CEEF /* WidgetKit.framework */; };
+		38C433122DC2B2860085CEEF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C433112DC2B2860085CEEF /* SwiftUI.framework */; };
+		38C4331D2DC2B2880085CEEF /* RemoteComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 38C4330D2DC2B2860085CEEF /* RemoteComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		38C433242DC2B3090085CEEF /* Remote-Watch-App-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38C433232DC2B3090085CEEF /* Remote-Watch-App-Info.plist */; };
+		38F1D0782DB6AEDC000FDBA3 /* Remote Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 38F1D0772DB6AEDC000FDBA3 /* Remote Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		38F1D0952DB6BB3D000FDBA3 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 38F1D0942DB6BB3D000FDBA3 /* SwiftKeychainWrapper */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38C4331B2DC2B2880085CEEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F1D06B2DB6AEDC000FDBA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38C4330C2DC2B2860085CEEF;
+			remoteInfo = RemoteComplicationExtension;
+		};
+		38F1D0792DB6AEDC000FDBA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F1D06B2DB6AEDC000FDBA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38F1D0762DB6AEDC000FDBA3;
+			remoteInfo = "Remote Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		38C433222DC2B2880085CEEF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				38C4331D2DC2B2880085CEEF /* RemoteComplicationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F1D0872DB6AEDD000FDBA3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				38F1D0782DB6AEDC000FDBA3 /* Remote Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		384F99092DC8FE1A000CC51C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		38C4330D2DC2B2860085CEEF /* RemoteComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RemoteComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		38C4330F2DC2B2860085CEEF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		38C433112DC2B2860085CEEF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		38C433232DC2B3090085CEEF /* Remote-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Remote-Watch-App-Info.plist"; sourceTree = "<group>"; };
+		38F1D0712DB6AEDC000FDBA3 /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F1D0772DB6AEDC000FDBA3 /* Remote Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remote Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		38C4331E2DC2B2880085CEEF /* Exceptions for "RemoteComplication" folder in "RemoteComplicationExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 38C4330C2DC2B2860085CEEF /* RemoteComplicationExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		38C433132DC2B2860085CEEF /* RemoteComplication */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				38C4331E2DC2B2880085CEEF /* Exceptions for "RemoteComplication" folder in "RemoteComplicationExtension" target */,
+			);
+			path = RemoteComplication;
+			sourceTree = "<group>";
+		};
+		38F1D07B2DB6AEDC000FDBA3 /* Remote Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Remote Watch App";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38C4330A2DC2B2860085CEEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38C433122DC2B2860085CEEF /* SwiftUI.framework in Frameworks */,
+				38C433102DC2B2860085CEEF /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F1D0742DB6AEDC000FDBA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38F1D0952DB6BB3D000FDBA3 /* SwiftKeychainWrapper in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38C4330E2DC2B2860085CEEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38C4330F2DC2B2860085CEEF /* WidgetKit.framework */,
+				38C433112DC2B2860085CEEF /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38F1D06A2DB6AEDC000FDBA3 = {
+			isa = PBXGroup;
+			children = (
+				384F99092DC8FE1A000CC51C /* README.md */,
+				38C433232DC2B3090085CEEF /* Remote-Watch-App-Info.plist */,
+				38F1D07B2DB6AEDC000FDBA3 /* Remote Watch App */,
+				38C433132DC2B2860085CEEF /* RemoteComplication */,
+				38C4330E2DC2B2860085CEEF /* Frameworks */,
+				38F1D0722DB6AEDC000FDBA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		38F1D0722DB6AEDC000FDBA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38F1D0712DB6AEDC000FDBA3 /* Remote.app */,
+				38F1D0772DB6AEDC000FDBA3 /* Remote Watch App.app */,
+				38C4330D2DC2B2860085CEEF /* RemoteComplicationExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38C4330C2DC2B2860085CEEF /* RemoteComplicationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38C4331F2DC2B2880085CEEF /* Build configuration list for PBXNativeTarget "RemoteComplicationExtension" */;
+			buildPhases = (
+				38C433092DC2B2860085CEEF /* Sources */,
+				38C4330A2DC2B2860085CEEF /* Frameworks */,
+				38C4330B2DC2B2860085CEEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				38C433132DC2B2860085CEEF /* RemoteComplication */,
+			);
+			name = RemoteComplicationExtension;
+			packageProductDependencies = (
+			);
+			productName = RemoteComplicationExtension;
+			productReference = 38C4330D2DC2B2860085CEEF /* RemoteComplicationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		38F1D0702DB6AEDC000FDBA3 /* Remote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F1D0882DB6AEDD000FDBA3 /* Build configuration list for PBXNativeTarget "Remote" */;
+			buildPhases = (
+				38F1D06F2DB6AEDC000FDBA3 /* Resources */,
+				38F1D0872DB6AEDD000FDBA3 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38F1D07A2DB6AEDC000FDBA3 /* PBXTargetDependency */,
+			);
+			name = Remote;
+			packageProductDependencies = (
+			);
+			productName = Remote;
+			productReference = 38F1D0712DB6AEDC000FDBA3 /* Remote.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		38F1D0762DB6AEDC000FDBA3 /* Remote Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F1D0842DB6AEDD000FDBA3 /* Build configuration list for PBXNativeTarget "Remote Watch App" */;
+			buildPhases = (
+				38F1D0732DB6AEDC000FDBA3 /* Sources */,
+				38F1D0742DB6AEDC000FDBA3 /* Frameworks */,
+				38F1D0752DB6AEDC000FDBA3 /* Resources */,
+				38C433222DC2B2880085CEEF /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38C4331C2DC2B2880085CEEF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				38F1D07B2DB6AEDC000FDBA3 /* Remote Watch App */,
+			);
+			name = "Remote Watch App";
+			packageProductDependencies = (
+				38F1D0942DB6BB3D000FDBA3 /* SwiftKeychainWrapper */,
+			);
+			productName = "Remote Watch App";
+			productReference = 38F1D0772DB6AEDC000FDBA3 /* Remote Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38F1D06B2DB6AEDC000FDBA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					38C4330C2DC2B2860085CEEF = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					38F1D0702DB6AEDC000FDBA3 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					38F1D0762DB6AEDC000FDBA3 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+				};
+			};
+			buildConfigurationList = 38F1D06E2DB6AEDC000FDBA3 /* Build configuration list for PBXProject "Remote" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38F1D06A2DB6AEDC000FDBA3;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				38F1D0932DB6BB3D000FDBA3 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 38F1D0722DB6AEDC000FDBA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38F1D0702DB6AEDC000FDBA3 /* Remote */,
+				38F1D0762DB6AEDC000FDBA3 /* Remote Watch App */,
+				38C4330C2DC2B2860085CEEF /* RemoteComplicationExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38C4330B2DC2B2860085CEEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F1D06F2DB6AEDC000FDBA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F1D0752DB6AEDC000FDBA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				384F990A2DC8FE22000CC51C /* README.md in Resources */,
+				38C433242DC2B3090085CEEF /* Remote-Watch-App-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38C433092DC2B2860085CEEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F1D0732DB6AEDC000FDBA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38C4331C2DC2B2880085CEEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38C4330C2DC2B2860085CEEF /* RemoteComplicationExtension */;
+			targetProxy = 38C4331B2DC2B2880085CEEF /* PBXContainerItemProxy */;
+		};
+		38F1D07A2DB6AEDC000FDBA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38F1D0762DB6AEDC000FDBA3 /* Remote Watch App */;
+			targetProxy = 38F1D0792DB6AEDC000FDBA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		38C433202DC2B2880085CEEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RemoteComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoteComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = scarpa.Remote.watchkitapp.RemoteComplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		38C433212DC2B2880085CEEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RemoteComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoteComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = scarpa.Remote.watchkitapp.RemoteComplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		38F1D0822DB6AEDD000FDBA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		38F1D0832DB6AEDD000FDBA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		38F1D0852DB6AEDD000FDBA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Remote-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Remote;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = scarpa.Remote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Debug;
+		};
+		38F1D0862DB6AEDD000FDBA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Remote-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Remote;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = scarpa.Remote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.4;
+			};
+			name = Release;
+		};
+		38F1D0892DB6AEDD000FDBA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				INFOPLIST_KEY_CFBundleDisplayName = Remote;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = scarpa.Remote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		38F1D08A2DB6AEDD000FDBA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XK9QPN8LQ4;
+				INFOPLIST_KEY_CFBundleDisplayName = Remote;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = scarpa.Remote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38C4331F2DC2B2880085CEEF /* Build configuration list for PBXNativeTarget "RemoteComplicationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38C433202DC2B2880085CEEF /* Debug */,
+				38C433212DC2B2880085CEEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F1D06E2DB6AEDC000FDBA3 /* Build configuration list for PBXProject "Remote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F1D0822DB6AEDD000FDBA3 /* Debug */,
+				38F1D0832DB6AEDD000FDBA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F1D0842DB6AEDD000FDBA3 /* Build configuration list for PBXNativeTarget "Remote Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F1D0852DB6AEDD000FDBA3 /* Debug */,
+				38F1D0862DB6AEDD000FDBA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F1D0882DB6AEDD000FDBA3 /* Build configuration list for PBXNativeTarget "Remote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F1D0892DB6AEDD000FDBA3 /* Debug */,
+				38F1D08A2DB6AEDD000FDBA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		38F1D0932DB6BB3D000FDBA3 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		38F1D0942DB6BB3D000FDBA3 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38F1D0932DB6BB3D000FDBA3 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 38F1D06B2DB6AEDC000FDBA3 /* Project object */;
+}
