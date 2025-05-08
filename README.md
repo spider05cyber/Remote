@@ -22,7 +22,9 @@ This is a remote app for Apple Watch, based on the Apple TV Remote App’s desig
 ## On prerequisite #3: “Pre-existing Home Assistant automations defined”...
 Home Assistant already allows control of `media_player` entities with the iOS Remote Widget in Control Center, having configured the [HomeKit Bridge](https://www.home-assistant.io/integrations/homekit/) integration and exposed the entities to Apple Home. For ease of configuration for users already using the iOS Remote, and interoperability with different `media_players` and `remote` entities, this project uses the same backend HA automations that are used for iOS Control Center Remote control.
 
-See [this article](https://www.home-assistant.io/integrations/homekit/#ios-remote-widget), explaining how automations can be configured to support the iOS Remote, as you *will* need these pre-configured, before using this project. **If you have already done this, you can skip this section.**
+See [this article](https://www.home-assistant.io/integrations/homekit/#ios-remote-widget), explaining how automations can be configured to support the iOS Remote, as you *will* need these pre-configured, before using this project. 
+
+**If you have already done this, you can skip this section.**
 
 # Configuration
 1. Install the app to your Apple Watch
@@ -31,7 +33,7 @@ Use Xcode to do this via a Mac. A simple, free developer account could be used a
 2. Configure the REST API
 Input your HA URL in the Settings page, with your API Key/Long-Lived Access Token to allow connection and retrieval of `media_players`.
 
-**On typing your Long-Lived Access Token in**
+## On typing your Long-Lived Access Token in
 This app was always designed as a watch-only app, as the iOS Remote App works already on iOS. The *really* annoying drawback of this comes to configuring the app for the first time, as typing is not the best on an Apple Watch, especially when you are trying to input a long-lived access token!!!
 
 The solution: use the notification that comes up on your iPhone when bringing up the Apple Watch keyboard to type.

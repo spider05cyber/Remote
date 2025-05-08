@@ -1,9 +1,6 @@
 import SwiftUI
 import UIKit
 
-// Constants for crown rotation
-private let ROTATION_AMOUNT: Double = 80   // Trigger every x units of rotation
-private let MIN_NUDGE: Double = 10  // Ignore nudges smaller than this
 
 struct PlayerInstructionsView: View {
     var body: some View {
@@ -25,6 +22,7 @@ struct PlayerInstructionsView: View {
         }
     }
 }
+private let MIN_NUDGE: Double = 50  // Ignore nudges smaller than this
 
 struct PlayerControlView: View {
     let player: MediaPlayer
@@ -34,13 +32,11 @@ struct PlayerControlView: View {
     @EnvironmentObject var apiConfiguration: APIConfigurationModel
     @EnvironmentObject var remoteControlManager: RemoteControlManager
 
-    @State private var showPill: Bool = false
-    @State private var lastCrownActivity: Date = Date()
-    @State private var pillHideTask: Task<Void, Never>? = nil
-
     @State private var crownValue: Double = 0
     @State private var lastCrownValue: Double = 0
-    @State private var crownAccumulator: Double = 0
+    @State private var showVolumeIndicator: Bool = false
+    @State private var volumeDirection: String = "" // "up" or "down"
+    @State private var indicatorHideTask: Task<Void, Never>? = nil
 
     var body: some View {
         NavigationStack {
@@ -54,30 +50,20 @@ struct PlayerControlView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        if showPill {
-                            CrownPillView(accumulator: crownAccumulator, maxAmount: ROTATION_AMOUNT)
-                                .transition(.asymmetric(
-                                    insertion: AnyTransition.move(edge: .trailing).combined(with: .opacity), // Slide in and fade in
-                                    removal: AnyTransition.move(edge: .trailing).combined(with: .opacity)   // Slide out and fade out
-                                ))
+                        if showVolumeIndicator {
+                            VolumeIndicatorView(direction: volumeDirection)
+                                .transition(.opacity)
                         }
                     }
                     Spacer()
                 }
             }
-            .animation(.easeInOut(duration: 0.5), value: showPill) // Animate the pill view
+            .animation(.easeInOut(duration: 0.3), value: showVolumeIndicator)
             .animation(.easeInOut(duration: 2), value: showInstructions)
             .navigationTitle(player.name)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 showInstructions = true
-                showPill = true // Show pill for affordance of volume control
-
-                // Start a task to hide the pill after 3 seconds
-                Task {
-                    try? await Task.sleep(nanoseconds: 3_000_000_000) // Wait for 3 seconds
-                    showPill = false // Hide the pill
-                }
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -122,7 +108,7 @@ struct PlayerControlView: View {
                 through: 1000,
                 sensitivity: .high,
                 isContinuous: true,
-                isHapticFeedbackEnabled: true
+                isHapticFeedbackEnabled: false
             )
             .onChange(of: crownValue) { oldValue, newValue in
                 handleCrownRotation(newValue: newValue)
@@ -155,48 +141,30 @@ struct PlayerControlView: View {
 
     private func handleCrownRotation(newValue: Double) {
         let delta = newValue - lastCrownValue
-        // Ignore tiny nudges
         guard abs(delta) > MIN_NUDGE else { return }
 
-        // --- Pill logic start ---
-        showPill = true
-        lastCrownActivity = Date()
-        startPillHideTimer()
-        // --- Pill logic end ---
-
-        crownAccumulator += delta
-
-        // Only process one direction per event to avoid crossing zero and sending the opposite command
-        if crownAccumulator >= ROTATION_AMOUNT {
-            let steps = Int(crownAccumulator / ROTATION_AMOUNT)
-            for _ in 0..<steps {
-                playCrownHaptics.toggle()
-                sendVolumeCommand("up")
-            }
-            crownAccumulator -= Double(steps) * ROTATION_AMOUNT
-        } else if crownAccumulator <= -ROTATION_AMOUNT {
-            let steps = Int(abs(crownAccumulator) / ROTATION_AMOUNT)
-            for _ in 0..<steps {
-                playCrownHaptics.toggle()
-                sendVolumeCommand("down")
-            }
-            crownAccumulator += Double(steps) * ROTATION_AMOUNT
+        if delta > 0 {
+            playCrownHaptics.toggle()
+            sendVolumeCommand("up")
+            showVolumeIndicator(direction: "up")
+        } else if delta < 0 {
+            playCrownHaptics.toggle()
+            sendVolumeCommand("down")
+            showVolumeIndicator(direction: "down")
         }
 
         lastCrownValue = newValue
     }
 
-    private func startPillHideTimer() {
-        // Cancel previous timer if any
-        pillHideTask?.cancel()
-        pillHideTask = Task {
-            try? await Task.sleep(nanoseconds: 3_000_000_000) // 3 seconds
-            // Only hide if no new activity
-            if Date().timeIntervalSince(lastCrownActivity) >= 3 {
-                await MainActor.run {
-                    showPill = false
-                    crownAccumulator = 0
-                }
+    private func showVolumeIndicator(direction: String) {
+        volumeDirection = direction
+        showVolumeIndicator = true
+        // Cancel previous hide task if any
+        indicatorHideTask?.cancel()
+        indicatorHideTask = Task {
+            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second
+            await MainActor.run {
+                showVolumeIndicator = false
             }
         }
     }
@@ -213,7 +181,7 @@ struct PlayerControlView: View {
     private func sendVolumeCommand(_ direction: String) {
         remoteControlManager.sendVolumeCommand(
             direction: direction,
-            mediaPlayerId: player.volumeEntityId, // using volume ID for customisability
+            mediaPlayerId: player.volumeEntityId,
             apiURL: apiConfiguration.apiURL,
             apiKey: apiConfiguration.apiKey
         )
@@ -225,5 +193,22 @@ struct PlayerControlView: View {
             apiURL: apiConfiguration.apiURL,
             apiKey: apiConfiguration.apiKey
         )
+    }
+}
+
+struct VolumeIndicatorView: View {
+    let direction: String
+    var body: some View {
+        HStack {
+            Image(systemName: direction == "up" ? "speaker.wave.2.fill" : "speaker.wave.1.fill")
+            Image(systemName: direction == "up" ? "arrow.up" : "arrow.down")
+        }
+        .padding(8)
+        .background(.ultraThinMaterial)
+        .cornerRadius(12)
+        .shadow(radius: 4)
+        .foregroundColor(.white)
+        .font(.title2)
+        .padding(.trailing, 8)
     }
 }
