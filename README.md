@@ -27,10 +27,12 @@ See [this article](https://www.home-assistant.io/integrations/homekit/#ios-remot
 **If you have already done this, you can skip this section.**
 
 # Configuration
-1. Install the app to your Apple Watch
+**1. Install the app to your Apple Watch**
+
 Use Xcode to do this via a Mac. A simple, free developer account could be used as there are no special entitlements being used.
 
-2. Configure the REST API
+**2. Configure the REST API**
+
 Input your HA URL in the Settings page, with your API Key/Long-Lived Access Token to allow connection and retrieval of `media_players`.
 
 ## On typing your Long-Lived Access Token in
@@ -42,5 +44,6 @@ The problem with this: it still does not allow pasting of the access token.
 
 The solution (again): create a Text Replacement shortcut in iOS Settings that maps to your access token so you can use that to type it in, rather than copy and paste, as this won't work.
 
-3. Profit.
+**3. Profit.**
+
 You wont have to repeat the above (especially step 2!) as long as you don't delete the app. Refresh the app every 7 days if on a free developer account to avoid expiry of the provisioning profile.
